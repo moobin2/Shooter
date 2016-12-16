@@ -1996,6 +1996,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 417834, guid: bc7786fff90769746afd22d4d491406b, type: 2}
   m_PrefabInternal: {fileID: 842181447}
+--- !u!1001 &871494799
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1491357186}
+    m_Modifications:
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.216439635
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .976296008
+      objectReference: {fileID: 0}
+    - target: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &871494800 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 498574, guid: fd4eacc4f70aafe4095864ded8e4ace7, type: 2}
+  m_PrefabInternal: {fileID: 871494799}
 --- !u!1 &890506498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,6 +3221,7 @@ Transform:
   - {fileID: 506537497}
   - {fileID: 1705377547}
   - {fileID: 49068740}
+  - {fileID: 871494800}
   m_Father: {fileID: 527447205}
   m_RootOrder: 9
 --- !u!4 &1585695360 stripped
