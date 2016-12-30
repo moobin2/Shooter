@@ -3,16 +3,19 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-    public float speed = 6.0f;
-    private Vector3 movement;
-    private Animator anim;
-    private Rigidbody playerRigid;
-    private int floorMask;
-    float camRayLength = 100.0f;
+    public  float       speed = 6.0f;
+    private float       rollingH;
+    private float       rollingV;
+    private Vector3     playerToMouse;
+    private Vector3     movement;
+    private Animator    PlayerAnimator;
+    private Rigidbody   playerRigid;
+    private int         floorMask;
+    private float       camRayLength = 100.0f;
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        PlayerAnimator = GetComponent<Animator>();
         playerRigid = GetComponent<Rigidbody>();
         floorMask = LayerMask.GetMask("Floor");
     }
@@ -22,9 +25,17 @@ public class PlayerMove : MonoBehaviour {
         float h = Input.GetAxisRaw("Horizontal"); // -1 , 0 , 1 값만 가짐.
         float v = Input.GetAxisRaw("Vertical");
 
-        Move(h, v);
-        Turning();
-        Animating(h, v);
+        if (PlayerAnimator.GetBool("IsRolling") == false)
+        {
+            Move(h, v);
+            Turning();
+            PlayerAnimatorating(h, v);
+        }
+        else
+        {
+            RollingMove();
+        }
+
     }
 
     void Move(float h, float v)
@@ -43,7 +54,7 @@ public class PlayerMove : MonoBehaviour {
 
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
-            Vector3 playerToMouse = floorHit.point - transform.position;
+            playerToMouse = floorHit.point - transform.position;
             playerToMouse.y = 0.0f;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
@@ -51,9 +62,30 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-    void Animating(float h, float v)
+    void PlayerAnimatorating(float h, float v)
     {
         bool run = h != 0.0f || v != 0.0f;
-        anim.SetBool("IsRun", run);
+        PlayerAnimator.SetBool("IsRunning", run);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            PlayerAnimator.SetBool("IsRolling", true);
+        }
+    }
+
+    public void RollingEnd()
+    {
+        PlayerAnimator.SetBool("IsRolling", false);
+        speed = 6.0f;
+    }
+
+    void RollingMove()
+    {
+        Vector3 playerDirection = playerToMouse.normalized;
+        playerDirection *= speed * Time.deltaTime;
+
+        speed -= 0.05f;
+
+        playerRigid.MovePosition(transform.position + playerDirection);
     }
 }
