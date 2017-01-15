@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.40655723, g: 0.69028413, b: 0.850299, a: 1}
+  m_IndirectSpecularColor: {r: 0.41097847, g: 0.6983423, b: 0.8603422, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -574,6 +574,7 @@ Transform:
   m_Children:
   - {fileID: 1490066074}
   - {fileID: 175669334}
+  - {fileID: 725389640}
   m_Father: {fileID: 1413890197}
   m_RootOrder: 2
 --- !u!1 &381144464
@@ -1175,6 +1176,46 @@ MonoBehaviour:
   mAtlas: {fileID: 114000014190541552, guid: dc51a197997dd044ea3e32a81e2b5637, type: 2}
   mSpriteName: Man
   mFillCenter: 1
+--- !u!1 &725389639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 725389640}
+  - 114: {fileID: 725389641}
+  m_Layer: 5
+  m_Name: HairObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725389640
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725389639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 314350255}
+  m_RootOrder: 2
+--- !u!114 &725389641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725389639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65e3979607ada54a857155a605a3ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &821403652
 GameObject:
   m_ObjectHideFlags: 0

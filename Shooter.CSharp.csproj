@@ -231,6 +231,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Player\TitleCharacterMove.cs" />
     <Compile Include="Assets\Scripts\SkyBox\SkyboxRotate.cs" />
+    <Compile Include="Assets\Scripts\UI\HairSelect.cs" />
     <Compile Include="Assets\Scripts\Weapon\Arrow.cs" />
   </ItemGroup>
   <ItemGroup>
